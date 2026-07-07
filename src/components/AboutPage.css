@@ -406,7 +406,7 @@
 @media (prefers-contrast: high) {
   .about-hero h1 em {
     -webkit-text-fill-color: var(--gold);
-    text-fill-color: var(--gold);
+    
   }
 
   .about-body p {

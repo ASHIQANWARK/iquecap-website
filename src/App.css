@@ -44,32 +44,63 @@ body.touch-device {
 }
 
 /* CURSOR */
-.cursor {
-  width: 10px;
-  height: 10px;
-  background: var(--green);
-  border-radius: 50%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  z-index: 9999;
-  transition: transform 0.15s ease;
-  mix-blend-mode: exclusion;
+/* Custom Cursor Styles */
+.custom-cursor {
+  display: none;
 }
 
-.cursor-ring {
-  width: 34px;
-  height: 34px;
-  border: 1px solid var(--green-dark);
-  border-radius: 50%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  z-index: 9998;
-  transition: all 0.2s ease;
-  opacity: 0.45;
+.custom-cursor-ring {
+  display: none;
+}
+
+/* Only show custom cursor on desktop */
+@media (min-width: 1025px) {
+  .desktop-device .custom-cursor {
+    display: block;
+  }
+  
+  .desktop-device .custom-cursor-ring {
+    display: block;
+  }
+  
+  /* Hide default cursor on desktop */
+  .desktop-device {
+    cursor: none !important;
+  }
+  
+  .desktop-device button,
+  .desktop-device a,
+  .desktop-device input,
+  .desktop-device textarea,
+  .desktop-device .clickable {
+    cursor: none !important;
+  }
+}
+
+/* Touch devices - show default cursor */
+@media (max-width: 1024px) {
+  .touch-device {
+    cursor: auto !important;
+  }
+  
+  .touch-device button,
+  .touch-device a,
+  .touch-device input,
+  .touch-device textarea {
+    cursor: pointer !important;
+  }
+}
+
+/* Mobile/Tablet specific */
+@media (hover: none) and (pointer: coarse) {
+  .custom-cursor,
+  .custom-cursor-ring {
+    display: none !important;
+  }
+  
+  body {
+    cursor: auto !important;
+  }
 }
 
 /* NOISE */
