@@ -1,0 +1,73 @@
+.privacy-hero {
+  min-height: 45vh;
+  display: flex;
+  align-items: flex-end;
+  padding: 140px 60px 60px;
+  background: var(--deep);
+  border-bottom: 1px solid rgba(0, 180, 148, 0.08);
+}
+
+.privacy-hero-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.8rem, 5vw, 4.5rem);
+  font-weight: 300;
+  color: var(--white);
+  line-height: 1.08;
+}
+
+.privacy-hero-title em {
+  background: var(--grad);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-style: italic;
+}
+
+.privacy-content {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 70px 40px 100px;
+}
+
+.privacy-intro {
+  font-size: 0.95rem;
+  color: rgba(0, 230, 118, 0.7);
+  letter-spacing: 0.05em;
+  margin-bottom: 48px;
+  line-height: 1.8;
+}
+
+.privacy-content h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin: 40px 0 12px;
+}
+
+.privacy-content p {
+  font-size: 0.95rem;
+  line-height: 1.9;
+  color: var(--white-dim);
+}
+
+.privacy-content a {
+  color: var(--green);
+  text-decoration: none;
+}
+
+.privacy-content a:hover {
+  text-decoration: underline;
+}
+
+.privacy-footer {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--white);
+  margin-top: 40px;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.2rem;
+}

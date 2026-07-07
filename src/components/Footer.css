@@ -1,0 +1,95 @@
+.footer {
+  background: var(--black);
+  border-top: 1px solid rgba(0, 180, 148, 0.06);
+  padding: 56px 60px 28px;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 56px;
+  margin-bottom: 56px;
+}
+
+.footer-brand .nav-logo {
+  font-size: 1.2rem;
+}
+
+.footer-brand .nav-logo-img {
+  height: 38px;
+}
+
+.footer-brand p {
+  font-size: 0.83rem;
+  line-height: 1.8;
+  color: var(--white-dim);
+  margin-top: 14px;
+  max-width: 270px;
+}
+
+.footer-col h4 {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 18px;
+}
+
+.footer-col a {
+  display: block;
+  font-size: 0.83rem;
+  color: var(--white-dim);
+  text-decoration: none;
+  margin-bottom: 9px;
+  transition: color 0.3s;
+  cursor: pointer;
+}
+
+.footer-col a:hover {
+  color: var(--white);
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(0, 180, 148, 0.05);
+  padding-top: 26px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.72rem;
+  color: rgba(240, 250, 249, 0.2);
+}
+
+.footer-bottom a {
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.footer-bottom a:hover {
+  color: var(--white);
+}
+
+@media (max-width: 900px) {
+  .footer {
+    padding: 40px 22px 24px;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 500px) {
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}

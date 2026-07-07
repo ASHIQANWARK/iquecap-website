@@ -1,0 +1,85 @@
+.about-hero {
+  min-height: 62vh;
+  display: flex;
+  align-items: flex-end;
+  padding: 120px 60px 60px;
+  background:
+    radial-gradient(ellipse 55% 75% at 25% 55%, rgba(13, 110, 110, 0.07) 0%, transparent 65%),
+    var(--deep);
+  border-bottom: 1px solid rgba(0, 180, 148, 0.06);
+}
+
+.about-hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.8rem, 5.5vw, 5rem);
+  font-weight: 300;
+  line-height: 1.08;
+  color: var(--white);
+}
+
+.about-hero h1 em {
+  background: var(--grad);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-style: italic;
+}
+
+.about-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  padding: 100px 60px;
+  background: var(--black);
+}
+
+.about-body p {
+  font-size: 1.02rem;
+  line-height: 1.9;
+  color: var(--white-dim);
+  margin-bottom: 22px;
+}
+
+.about-body p strong {
+  color: var(--white);
+  font-weight: 500;
+}
+
+.values-section {
+  background: var(--deep);
+  padding: 100px 60px;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  margin-top: 56px;
+}
+
+.value-card {
+  background: var(--black);
+  padding: 44px 34px;
+}
+
+.value-number {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3rem;
+  color: rgba(0, 180, 148, 0.12);
+  font-weight: 300;
+  margin-bottom: 14px;
+}
+
+.value-title {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--white);
+  margin-bottom: 12px;
+}
+
+.value-desc {
+  font-size: 0.87rem;
+  line-height: 1.8;
+  color: var(--white-dim);
+}

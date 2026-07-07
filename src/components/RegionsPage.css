@@ -1,0 +1,47 @@
+.regions-hero {
+  padding: 140px 60px 70px;
+  background: var(--deep);
+}
+
+.regions-hero-content {
+  max-width: 760px;
+}
+
+.regions-hero-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.8rem, 5.5vw, 5rem);
+  font-weight: 300;
+  color: var(--white);
+  line-height: 1.08;
+  margin-bottom: 14px;
+}
+
+.regions-hero-title em {
+  background: var(--grad);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-style: italic;
+}
+
+.regions-hero-sub {
+  font-size: 1rem;
+  color: var(--white-dim);
+  max-width: 520px;
+  line-height: 1.8;
+  margin-bottom: 50px;
+}
+
+.regions-grid-container {
+  background: var(--black);
+  padding: 0 60px 90px;
+}
+
+@media (max-width: 900px) {
+  .regions-hero {
+    padding: 120px 22px 50px;
+  }
+  .regions-grid-container {
+    padding: 0 22px 60px;
+  }
+}

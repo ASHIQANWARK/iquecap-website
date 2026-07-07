@@ -1,0 +1,53 @@
+.quote-section {
+  background: var(--black);
+  padding: 90px 60px;
+  text-align: center;
+  border-top: 1px solid rgba(0, 180, 148, 0.06);
+  border-bottom: 1px solid rgba(0, 180, 148, 0.06);
+  position: relative;
+  overflow: hidden;
+}
+
+.quote-section::before {
+  content: '"';
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24rem;
+  line-height: 0.8;
+  color: rgba(0, 180, 148, 0.03);
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.quote-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.7rem, 3vw, 2.7rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--white);
+  max-width: 880px;
+  margin: 0 auto;
+  line-height: 1.45;
+  position: relative;
+  z-index: 1;
+}
+
+.quote-text em {
+  background: var(--grad);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-style: italic;
+}
+
+@media (max-width: 900px) {
+  .quote-section {
+    padding: 60px 22px;
+  }
+
+  .quote-text {
+    font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+  }
+}

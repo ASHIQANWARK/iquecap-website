@@ -1,0 +1,645 @@
+/* src/components/CapAcademy.css */
+
+/* Hero Section */
+.academy-hero {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  padding: 140px 60px 80px;
+  background:
+    radial-gradient(ellipse 70% 60% at 30% 40%, rgba(0, 180, 148, 0.08) 0%, transparent 65%),
+    radial-gradient(ellipse 50% 50% at 70% 60%, rgba(13, 110, 110, 0.05) 0%, transparent 60%),
+    var(--deep);
+  border-bottom: 1px solid rgba(0, 180, 148, 0.06);
+}
+
+.academy-hero-content {
+  max-width: 760px;
+  width: 100%;
+}
+
+.academy-hero-badge {
+  display: inline-block;
+  font-family: 'Syne', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--green);
+  background: rgba(0, 230, 118, 0.08);
+  padding: 6px 16px;
+  border: 1px solid rgba(0, 230, 118, 0.15);
+  margin-bottom: 20px;
+}
+
+.academy-hero-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(3.5rem, 7vw, 6rem);
+  font-weight: 300;
+  line-height: 1.05;
+  color: var(--white);
+  margin-bottom: 4px;
+}
+
+.academy-hero-subtitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--green);
+  margin-bottom: 24px;
+}
+
+.academy-hero-sub {
+  font-size: 1.05rem;
+  color: var(--white-dim);
+  max-width: 560px;
+  line-height: 1.8;
+  margin-bottom: 40px;
+}
+
+.academy-hero-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* About Section */
+.academy-about {
+  background: var(--black);
+  padding: 90px 60px;
+}
+
+.academy-about-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.academy-about-text {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--white-dim);
+  margin-bottom: 24px;
+}
+
+.academy-about-vision {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px 24px;
+  background: var(--surface);
+  border-left: 3px solid var(--green);
+}
+
+.academy-about-vision-icon {
+  font-size: 1.5rem;
+}
+
+.academy-about-vision h4 {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 4px;
+}
+
+.academy-about-vision p {
+  font-size: 0.85rem;
+  color: var(--white-dim);
+  line-height: 1.6;
+}
+
+.academy-stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.academy-stat-card {
+  background: var(--surface);
+  padding: 24px 20px;
+  border: 1px solid rgba(0, 180, 148, 0.08);
+  text-align: center;
+}
+
+.academy-stat-number {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+  font-weight: 600;
+  color: var(--green);
+  margin-bottom: 4px;
+}
+
+.academy-stat-label {
+  font-size: 0.7rem;
+  color: var(--white-dim);
+  line-height: 1.4;
+}
+
+/* Opportunity Section */
+.academy-opportunity {
+  background: var(--deep);
+  padding: 80px 60px;
+}
+
+.academy-opportunity-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.academy-opportunity-text {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: var(--white-dim);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Features Section */
+.academy-features {
+  background: var(--black);
+  padding: 90px 60px;
+}
+
+.academy-section-header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.academy-section-header .section-label {
+  justify-content: center;
+}
+
+.academy-section-header .section-label::before {
+  display: none;
+}
+
+.academy-section-sub {
+  font-size: 1rem;
+  color: var(--white-dim);
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.academy-features-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.academy-feature-card {
+  background: var(--surface);
+  padding: 28px 24px;
+  border: 1px solid rgba(0, 180, 148, 0.06);
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.academy-feature-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(0, 180, 148, 0.2);
+  background: var(--surface2);
+}
+
+.academy-feature-icon {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.academy-feature-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 6px;
+}
+
+.academy-feature-desc {
+  font-size: 0.75rem;
+  color: var(--white-dim);
+  line-height: 1.5;
+}
+
+/* Benefits Section */
+.academy-benefits {
+  background: var(--deep);
+  padding: 90px 60px;
+}
+
+.academy-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.academy-benefit-card {
+  background: var(--black);
+  padding: 28px 24px;
+  border: 1px solid rgba(0, 180, 148, 0.06);
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.academy-benefit-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(0, 180, 148, 0.2);
+}
+
+.academy-benefit-icon {
+  font-size: 1.8rem;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.academy-benefit-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 6px;
+}
+
+.academy-benefit-desc {
+  font-size: 0.78rem;
+  color: var(--white-dim);
+  line-height: 1.5;
+}
+
+/* Program Highlights */
+.academy-highlights {
+  background: var(--black);
+  padding: 80px 60px;
+}
+
+.academy-highlights-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.academy-highlights-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.academy-highlights-list li {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  color: var(--white-dim);
+  padding: 12px 16px;
+  background: var(--surface);
+  border-left: 2px solid var(--green);
+  line-height: 1.5;
+}
+
+/* Training Flow */
+.academy-flow {
+  background: var(--deep);
+  padding: 90px 60px;
+}
+
+.academy-flow-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.academy-flow-card {
+  background: var(--black);
+  padding: 24px 20px;
+  border: 1px solid rgba(0, 180, 148, 0.06);
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.academy-flow-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(0, 180, 148, 0.2);
+}
+
+.academy-flow-number {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: rgba(0, 230, 118, 0.15);
+  margin-bottom: 8px;
+}
+
+.academy-flow-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 6px;
+}
+
+.academy-flow-desc {
+  font-size: 0.7rem;
+  color: var(--white-dim);
+  line-height: 1.5;
+}
+
+/* Earnings Section */
+.academy-earnings {
+  background: var(--black);
+  padding: 80px 60px;
+}
+
+.academy-earnings-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.academy-earnings-grid {
+  margin-top: 32px;
+}
+
+.academy-earning-card {
+  background: var(--surface);
+  padding: 32px 36px;
+  border: 1px solid rgba(0, 180, 148, 0.08);
+}
+
+.academy-earning-card h4 {
+  font-family: 'Syne', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 16px;
+}
+
+.academy-earning-card ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.academy-earning-card ul li {
+  font-size: 0.85rem;
+  color: var(--white-dim);
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(0, 180, 148, 0.05);
+}
+
+.academy-earning-icon {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 12px;
+}
+
+/* Success Stories */
+.academy-stories {
+  background: var(--deep);
+  padding: 90px 60px;
+}
+
+.academy-stories-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.academy-story-card {
+  background: var(--black);
+  padding: 32px 28px;
+  border: 1px solid rgba(0, 180, 148, 0.06);
+}
+
+.academy-story-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--white-dim);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.academy-story-author {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.academy-story-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--grad);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--black);
+  flex-shrink: 0;
+}
+
+.academy-story-name {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--white);
+}
+
+.academy-story-location {
+  font-size: 0.75rem;
+  color: var(--green-dark);
+}
+
+.academy-story-role {
+  font-size: 0.7rem;
+  color: var(--white-dim);
+}
+
+.academy-stories-cta {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.academy-stories-cta-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  font-style: italic;
+  color: var(--green);
+}
+
+/* CTA Section */
+.academy-cta {
+  background: var(--black);
+  padding: 80px 60px;
+  border-top: 1px solid rgba(0, 180, 148, 0.06);
+}
+
+.academy-cta-content {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.academy-cta-content h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 3.5vw, 3.2rem);
+  font-weight: 400;
+  color: var(--white);
+  margin-bottom: 8px;
+  line-height: 1.15;
+}
+
+.academy-cta-content h2 em {
+  background: var(--grad);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-style: italic;
+}
+
+.academy-cta-content p {
+  font-size: 1rem;
+  color: var(--white-dim);
+  margin-bottom: 32px;
+  line-height: 1.7;
+}
+
+.academy-cta-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.academy-cta-note {
+  margin-top: 20px;
+  font-size: 0.85rem;
+  color: var(--white-dim);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .academy-hero {
+    padding: 120px 22px 60px;
+    min-height: 60vh;
+  }
+
+  .academy-about {
+    padding: 60px 22px;
+  }
+
+  .academy-about-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .academy-opportunity {
+    padding: 60px 22px;
+  }
+
+  .academy-features {
+    padding: 60px 22px;
+  }
+
+  .academy-features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .academy-benefits {
+    padding: 60px 22px;
+  }
+
+  .academy-benefits-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .academy-highlights {
+    padding: 60px 22px;
+  }
+
+  .academy-highlights-list {
+    grid-template-columns: 1fr;
+  }
+
+  .academy-flow {
+    padding: 60px 22px;
+  }
+
+  .academy-flow-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .academy-earnings {
+    padding: 60px 22px;
+  }
+
+  .academy-earning-card ul {
+    grid-template-columns: 1fr;
+  }
+
+  .academy-stories {
+    padding: 60px 22px;
+  }
+
+  .academy-stories-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .academy-cta {
+    padding: 60px 22px;
+  }
+
+  .academy-stats-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .academy-features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .academy-benefits-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .academy-flow-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .academy-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .academy-hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .academy-hero-actions button,
+  .academy-hero-actions a {
+    width: 100%;
+    text-align: center;
+  }
+
+  .academy-cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+}

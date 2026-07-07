@@ -1,0 +1,319 @@
+.region-hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 140px 60px 80px;
+}
+
+.region-hero-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 70% 60% at 60% 40%, rgba(0, 180, 148, 0.07) 0%, transparent 65%), var(--deep);
+}
+
+.region-hero-pattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.025;
+  background-image: repeating-linear-gradient(45deg, var(--green) 0px, var(--green) 1px, transparent 1px, transparent 55px);
+}
+
+.region-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 760px;
+  width: 100%;
+}
+
+.region-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(13, 110, 110, 0.1);
+  border: 1px solid rgba(0, 180, 148, 0.2);
+  padding: 7px 20px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 28px;
+}
+
+.region-hero-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.8rem, 6vw, 5.5rem);
+  font-weight: 300;
+  line-height: 1.08;
+  color: var(--white);
+  margin-bottom: 16px;
+}
+
+.region-hero-title em {
+  background: var(--grad);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-style: italic;
+}
+
+.region-tagline-big {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.1rem, 2.2vw, 1.6rem);
+  font-style: italic;
+  color: var(--green-dark);
+  margin-bottom: 24px;
+}
+
+.region-hero-sub {
+  font-size: 1rem;
+  color: var(--white-dim);
+  max-width: 560px;
+  line-height: 1.8;
+  margin-bottom: 44px;
+}
+
+.region-hero-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.region-phone-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--grad);
+  color: #030A0A;
+  padding: 15px 36px;
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  clip-path: polygon(8px 0%, 100% 0%, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0% 100%, 0% 8px);
+  transition: all 0.3s;
+}
+
+.region-phone-btn:hover {
+  opacity: 0.85;
+  transform: translateY(-2px);
+}
+
+.region-ghost-btn {
+  background: transparent;
+  color: var(--white);
+  border: 1px solid rgba(240, 250, 249, 0.2);
+  padding: 15px 36px;
+  font-family: 'Syne', sans-serif;
+  font-weight: 500;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.region-ghost-btn:hover {
+  border-color: var(--green);
+  color: var(--green);
+}
+
+/* WHY SECTION */
+.region-why {
+  background: var(--black);
+  padding: 90px 60px;
+}
+
+.region-why-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  align-items: start;
+}
+
+.region-why-text {
+  font-size: 0.98rem;
+  line-height: 1.9;
+  color: var(--white-dim);
+}
+
+.region-highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding-top: 8px;
+}
+
+.region-highlight {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 18px 20px;
+  border: 1px solid rgba(0, 180, 148, 0.1);
+  background: var(--surface);
+}
+
+.region-highlight-icon {
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+.region-highlight-title {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--white);
+  margin-bottom: 4px;
+}
+
+.region-highlight-desc {
+  font-size: 0.8rem;
+  color: var(--white-dim);
+  line-height: 1.6;
+}
+
+/* SECTORS */
+.region-sectors {
+  background: var(--deep);
+  padding: 80px 60px;
+}
+
+.region-sectors-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.region-sector-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.sector-pill {
+  background: rgba(0, 180, 148, 0.06);
+  border: 1px solid rgba(0, 180, 148, 0.15);
+  padding: 10px 22px;
+  font-family: 'Syne', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--white-dim);
+}
+
+/* FORM SECTION */
+.region-form-section {
+  background: var(--black);
+  padding: 100px 60px;
+}
+
+.region-form-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.region-form-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 400;
+  color: var(--white);
+  line-height: 1.15;
+  margin-bottom: 18px;
+}
+
+.region-form-title em {
+  background: var(--grad);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-style: italic;
+}
+
+.region-form-text {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: var(--white-dim);
+  margin-bottom: 36px;
+}
+
+.region-phone-block {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: rgba(0, 180, 148, 0.08);
+  border: 1px solid rgba(0, 180, 148, 0.25);
+  padding: 20px 24px;
+  text-decoration: none;
+}
+
+.region-phone-icon {
+  font-size: 1.5rem;
+}
+
+.region-phone-label {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 3px;
+}
+
+.region-phone-number {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 1.05rem;
+  color: var(--white);
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .region-hero {
+    padding: 120px 22px 60px;
+  }
+
+  .region-why {
+    padding: 60px 22px;
+  }
+
+  .region-why-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .region-sectors {
+    padding: 60px 22px;
+  }
+
+  .region-form-section {
+    padding: 60px 22px;
+  }
+
+  .region-form-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .region-hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .region-phone-btn,
+  .region-ghost-btn {
+    text-align: center;
+    justify-content: center;
+  }
+}
