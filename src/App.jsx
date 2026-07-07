@@ -1,6 +1,7 @@
 // App.js
 
-import React, { useState } from 'react'
+import React, { useEffect } from 'react'
+import { BrowserRouter as Router, Routes, Route, useLocation, useNavigate } from 'react-router-dom'
 import './App.css'
 import useCursor from './hooks/useCursor'
 
@@ -25,75 +26,180 @@ import DisclaimerPage from './components/DisclaimerPage'
 import RegionPage from './components/RegionPage'
 import CapAcademy from './components/CapAcademy'
 
-function App() {
-  const [currentPage, setCurrentPage] = useState('home')
-  const [blogIndex, setBlogIndex] = useState(0)
+// Scroll to top on route change
+const ScrollToTop = () => {
+  const { pathname } = useLocation()
+  
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }, [pathname])
+  
+  return null
+}
 
-  // Initialize cursor with proper error handling
+// Main App Content with Router
+function AppContent() {
+  const location = useLocation()
+  const navigate = useNavigate()
+  
+  // Initialize cursor
   useCursor(true)
 
+  // Navigation function
   const navigateTo = (page, index) => {
     console.log('Navigating to:', page)
-    setCurrentPage(page)
-    if (index !== undefined) setBlogIndex(index)
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-  }
-
-  const renderPage = () => {
-    switch (currentPage) {
+    let path = '/'
+    
+    switch(page) {
       case 'home':
-        return (
-          <>
-            <Hero navigateTo={navigateTo} />
-            <Ticker />
-            <WhatWeDo navigateTo={navigateTo} />
-            <HowItWorks />
-            <QuoteSection />
-            <Sectors />
-            <Regional navigateTo={navigateTo} />
-            <Testimonials />
-            <ContactSection navigateTo={navigateTo} />
-          </>
-        )
+        path = '/'
+        break
       case 'about':
-        return <AboutPage navigateTo={navigateTo} />
+        path = '/about'
+        break
       case 'academy':
-        return <CapAcademy navigateTo={navigateTo} />
+        path = '/academy'
+        break
       case 'blog':
-        return <BlogPage navigateTo={navigateTo} />
+        path = '/insights'
+        break
       case 'blogpost':
-        return <BlogPost index={blogIndex} navigateTo={navigateTo} />
+        path = `/insights/${index}`
+        break
       case 'contact':
-        return <ContactPage navigateTo={navigateTo} />
+        path = '/contact'
+        break
       case 'regions':
-        return <RegionsPage navigateTo={navigateTo} />
+        path = '/regions'
+        break
       case 'privacy':
-        return <PrivacyPage navigateTo={navigateTo} />
+        path = '/privacy'
+        break
       case 'disclaimer':
-        return <DisclaimerPage navigateTo={navigateTo} />
+        path = '/disclaimer'
+        break
       case 'kerala':
+        path = '/kerala'
+        break
       case 'karnataka':
+        path = '/karnataka'
+        break
       case 'maharashtra':
+        path = '/maharashtra'
+        break
       case 'tamilnadu':
+        path = '/tamilnadu'
+        break
       case 'punjab':
+        path = '/punjab'
+        break
       case 'delhi':
+        path = '/delhi-ncr'
+        break
       case 'mp':
+        path = '/madhyapradesh'
+        break
       case 'ap':
+        path = '/andhrapradesh'
+        break
       case 'odisha':
-        return <RegionPage regionId={currentPage} navigateTo={navigateTo} />
+        path = '/odisha'
+        break
       default:
-        return <Hero navigateTo={navigateTo} />
+        path = '/'
     }
+    
+    navigate(path)
   }
 
   return (
     <div className="app">
-      <Navbar navigateTo={navigateTo} currentPage={currentPage} />
+      <Navbar navigateTo={navigateTo} currentPage={location.pathname} />
       <main className="main-content">
-        {renderPage()}
+        <ScrollToTop />
+        <Routes>
+          {/* Home Route */}
+          <Route path="/" element={
+            <>
+              <Hero navigateTo={navigateTo} />
+              <Ticker />
+              <WhatWeDo navigateTo={navigateTo} />
+              <HowItWorks />
+              <QuoteSection />
+              <Sectors />
+              <Regional navigateTo={navigateTo} />
+              <Testimonials />
+              <ContactSection navigateTo={navigateTo} />
+            </>
+          } />
+          
+          {/* Static Pages */}
+          <Route path="/about" element={<AboutPage navigateTo={navigateTo} />} />
+          <Route path="/academy" element={<CapAcademy navigateTo={navigateTo} />} />
+          <Route path="/contact" element={<ContactPage navigateTo={navigateTo} />} />
+          <Route path="/regions" element={<RegionsPage navigateTo={navigateTo} />} />
+          <Route path="/privacy" element={<PrivacyPage navigateTo={navigateTo} />} />
+          <Route path="/disclaimer" element={<DisclaimerPage navigateTo={navigateTo} />} />
+          
+          {/* Blog Routes */}
+          <Route path="/insights" element={<BlogPage navigateTo={navigateTo} />} />
+          <Route path="/insights/:id" element={<BlogPost navigateTo={navigateTo} />} />
+          
+          {/* Region Routes */}
+          <Route path="/kerala" element={<RegionPage regionId="kerala" navigateTo={navigateTo} />} />
+          <Route path="/karnataka" element={<RegionPage regionId="karnataka" navigateTo={navigateTo} />} />
+          <Route path="/maharashtra" element={<RegionPage regionId="maharashtra" navigateTo={navigateTo} />} />
+          <Route path="/tamilnadu" element={<RegionPage regionId="tamilnadu" navigateTo={navigateTo} />} />
+          <Route path="/punjab" element={<RegionPage regionId="punjab" navigateTo={navigateTo} />} />
+          <Route path="/delhi-ncr" element={<RegionPage regionId="delhi" navigateTo={navigateTo} />} />
+          <Route path="/madhyapradesh" element={<RegionPage regionId="mp" navigateTo={navigateTo} />} />
+          <Route path="/andhrapradesh" element={<RegionPage regionId="ap" navigateTo={navigateTo} />} />
+          <Route path="/odisha" element={<RegionPage regionId="odisha" navigateTo={navigateTo} />} />
+          
+          {/* 404 - Catch all */}
+          <Route path="*" element={
+            <div style={{ 
+              padding: '120px 60px', 
+              textAlign: 'center', 
+              minHeight: '60vh',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center'
+            }}>
+              <h1 style={{ fontSize: '4rem', color: 'var(--gold)', marginBottom: '20px' }}>404</h1>
+              <p style={{ fontSize: '1.2rem', color: 'var(--white-dim)' }}>Page not found</p>
+              <button 
+                onClick={() => navigateTo('home')}
+                style={{
+                  marginTop: '30px',
+                  padding: '12px 30px',
+                  background: 'var(--gold)',
+                  border: 'none',
+                  borderRadius: '8px',
+                  color: '#000',
+                  fontSize: '1rem',
+                  cursor: 'pointer',
+                  fontWeight: '600'
+                }}
+              >
+                Go Home
+              </button>
+            </div>
+          } />
+        </Routes>
       </main>
       <Footer navigateTo={navigateTo} />
     </div>
+  )
+}
+
+// Main App Component
+function App() {
+  return (
+    <Router>
+      <AppContent />
+    </Router>
   )
 }
 
