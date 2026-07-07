@@ -1,6 +1,6 @@
 // App.js
 
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { BrowserRouter as Router, Routes, Route, useLocation, useNavigate } from 'react-router-dom'
 import './App.css'
 import useCursor from './hooks/useCursor'
@@ -41,6 +41,8 @@ const ScrollToTop = () => {
 function AppContent() {
   const location = useLocation()
   const navigate = useNavigate()
+  const [showBlogPost, setShowBlogPost] = useState(false)
+  const [selectedBlogIndex, setSelectedBlogIndex] = useState(0)
   
   // Initialize cursor
   useCursor(true)
@@ -53,63 +55,96 @@ function AppContent() {
     switch(page) {
       case 'home':
         path = '/'
+        setShowBlogPost(false)
         break
       case 'about':
         path = '/about'
+        setShowBlogPost(false)
         break
       case 'academy':
         path = '/academy'
+        setShowBlogPost(false)
         break
       case 'blog':
         path = '/insights'
+        setShowBlogPost(false)
         break
       case 'blogpost':
-        path = `/insights/${index}`
+        path = '/insights'
+        setSelectedBlogIndex(index || 0)
+        setShowBlogPost(true)
         break
       case 'contact':
         path = '/contact'
+        setShowBlogPost(false)
         break
       case 'regions':
         path = '/regions'
+        setShowBlogPost(false)
         break
       case 'privacy':
         path = '/privacy'
+        setShowBlogPost(false)
         break
       case 'disclaimer':
         path = '/disclaimer'
+        setShowBlogPost(false)
         break
       case 'kerala':
         path = '/kerala'
+        setShowBlogPost(false)
         break
       case 'karnataka':
         path = '/karnataka'
+        setShowBlogPost(false)
         break
       case 'maharashtra':
         path = '/maharashtra'
+        setShowBlogPost(false)
         break
       case 'tamilnadu':
         path = '/tamilnadu'
+        setShowBlogPost(false)
         break
       case 'punjab':
         path = '/punjab'
+        setShowBlogPost(false)
         break
       case 'delhi':
         path = '/delhi-ncr'
+        setShowBlogPost(false)
         break
       case 'mp':
         path = '/madhyapradesh'
+        setShowBlogPost(false)
         break
       case 'ap':
         path = '/andhrapradesh'
+        setShowBlogPost(false)
         break
       case 'odisha':
         path = '/odisha'
+        setShowBlogPost(false)
         break
       default:
         path = '/'
+        setShowBlogPost(false)
     }
     
     navigate(path)
+  }
+
+  // Handle blog post click from BlogPage
+  const handleBlogPostClick = (index) => {
+    setSelectedBlogIndex(index)
+    setShowBlogPost(true)
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
+  // Handle back to blog list
+  const handleBackToBlogs = () => {
+    setShowBlogPost(false)
+    window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
   return (
@@ -141,9 +176,22 @@ function AppContent() {
           <Route path="/privacy" element={<PrivacyPage navigateTo={navigateTo} />} />
           <Route path="/disclaimer" element={<DisclaimerPage navigateTo={navigateTo} />} />
           
-          {/* Blog Routes */}
-          <Route path="/insights" element={<BlogPage navigateTo={navigateTo} />} />
-          <Route path="/insights/:id" element={<BlogPost navigateTo={navigateTo} />} />
+          {/* Blog Routes - Insights */}
+          <Route path="/insights" element={
+            showBlogPost ? (
+              <BlogPost 
+                index={selectedBlogIndex} 
+                navigateTo={navigateTo} 
+                onBack={handleBackToBlogs}
+              />
+            ) : (
+              <BlogPage 
+                navigateTo={navigateTo} 
+                onPostClick={handleBlogPostClick}
+                showBlogPost={showBlogPost}
+              />
+            )
+          } />
           
           {/* Region Routes */}
           <Route path="/kerala" element={<RegionPage regionId="kerala" navigateTo={navigateTo} />} />
@@ -167,14 +215,14 @@ function AppContent() {
               alignItems: 'center',
               justifyContent: 'center'
             }}>
-              <h1 style={{ fontSize: '4rem', color: 'var(--gold)', marginBottom: '20px' }}>404</h1>
-              <p style={{ fontSize: '1.2rem', color: 'var(--white-dim)' }}>Page not found</p>
+              <h1 style={{ fontSize: '4rem', color: '#C9A84C', marginBottom: '20px' }}>404</h1>
+              <p style={{ fontSize: '1.2rem', color: 'rgba(255, 255, 255, 0.7)' }}>Page not found</p>
               <button 
                 onClick={() => navigateTo('home')}
                 style={{
                   marginTop: '30px',
                   padding: '12px 30px',
-                  background: 'var(--gold)',
+                  background: '#C9A84C',
                   border: 'none',
                   borderRadius: '8px',
                   color: '#000',

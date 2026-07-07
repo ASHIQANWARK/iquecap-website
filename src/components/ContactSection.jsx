@@ -161,6 +161,7 @@ const ContactSection = ({ navigateTo, page = 'Home', compact = false }) => {
   return (
     <section className={`contact-section ${compact ? 'compact' : ''}`} id="homeContact">
       <div className="contact-container">
+        {/* LEFT SIDE - Contact Info */}
         <div className="contact-info">
           <div className="section-label">Get In Touch</div>
           <h2>Ready to Open<br /><em>Your Doors?</em></h2>
@@ -177,7 +178,8 @@ const ContactSection = ({ navigateTo, page = 'Home', compact = false }) => {
           </div>
         </div>
 
-         <form className="contact-form" onSubmit={handleSubmit} noValidate>
+        {/* RIGHT SIDE - Form */}
+        <form className="contact-form" onSubmit={handleSubmit} noValidate>
           <div className="form-row">
             <div className="form-group">
               <label>Full Name *</label>
