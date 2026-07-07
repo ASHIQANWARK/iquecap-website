@@ -177,48 +177,27 @@ const ContactSection = ({ navigateTo, page = 'Home', compact = false }) => {
           </div>
         </div>
 
-        <form className="contact-form" onSubmit={handleSubmit} noValidate>
+         <form className="contact-form" onSubmit={handleSubmit} noValidate>
           <div className="form-row">
             <div className="form-group">
               <label>Full Name *</label>
-              <input 
-                type="text" 
-                name="fullName" 
-                placeholder="Your full name" 
-                required 
-              />
+              <input type="text" name="fullName" placeholder="Your name" required />
             </div>
             <div className="form-group">
               <label>Phone Number *</label>
-              <input 
-                type="tel" 
-                name="phone" 
-                placeholder="+91 XXXXX XXXXX" 
-                required 
-              />
+              <input type="tel" name="phone" placeholder="+91 XXXXX XXXXX" required />
             </div>
           </div>
-
           <div className="form-row">
             <div className="form-group">
               <label>Email Address *</label>
-              <input 
-                type="email" 
-                name="email" 
-                placeholder="your@email.com" 
-                required 
-              />
+              <input type="email" name="email" placeholder="your@email.com" required />
             </div>
             <div className="form-group">
               <label>City</label>
-              <input 
-                type="text" 
-                name="city" 
-                placeholder="Your city" 
-              />
+              <input type="text" name="city" placeholder="Your city" />
             </div>
           </div>
-
           <div className="form-row">
             <div className="form-group">
               <label>Investment Amount (₹) *</label>
@@ -245,15 +224,9 @@ const ContactSection = ({ navigateTo, page = 'Home', compact = false }) => {
               </small>
             </div>
           </div>
-
           <div className="form-group">
             <label>Message *</label>
-            <textarea 
-              name="message" 
-              rows={compact ? 3 : 4} 
-              placeholder="Tell us about your investment goals..."
-              required 
-            />
+            <textarea name="message" rows="5" required placeholder="Tell us what you're looking for..."></textarea>
           </div>
 
           {submitStatus.show && (
@@ -262,12 +235,8 @@ const ContactSection = ({ navigateTo, page = 'Home', compact = false }) => {
             </div>
           )}
 
-          <button 
-            type="submit" 
-            className="form-submit"
-            disabled={isSubmitting}
-          >
-            {isSubmitting ? 'Submitting...' : 'Begin My Journey →'}
+          <button type="submit" className="form-submit" disabled={isSubmitting}>
+            {isSubmitting ? 'Sending...' : 'Send Enquiry →'}
           </button>
         </form>
       </div>
