@@ -24,7 +24,7 @@ const RegionPage = ({ regionId, navigateTo }) => {
       'Madhya Pradesh': 'e.g., Bhopal, Indore, Jabalpur',
       'Andhra Pradesh': 'e.g., Visakhapatnam, Vijayawada, Tirupati',
       'Odisha': 'e.g., Bhubaneswar, Cuttack, Rourkela',
-      'Rajasthan': 'e.g., Jaipur, Jodhpur, Udaipur',
+      'Rajasthan': 'e.g., Jaipur, Jodhpur, ',
       'Gujarat': 'e.g., Ahmedabad, Surat, Vadodara',
       'West Bengal': 'e.g., Kolkata, Siliguri, Durgapur',
       'Telangana': 'e.g., Hyderabad, Warangal, Nizamabad',
