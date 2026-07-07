@@ -187,7 +187,7 @@ const ContactPage = ({ navigateTo }) => {
             </div>
             <div className="contact-item">
               <div className="contact-item-icon">📍</div>
-              <span>Kerala · Karnataka · Maharashtra · Tamil Nadu · Punjab · Delhi NCR · MP · Andhra Pradesh · Odisha</span>
+              <span>Kerala · Karnataka · Maharashtra · Tamil Nadu · Punjab · Delhi NCR · Madhya Pradesh · Andhra Pradesh · Odisha</span>
             </div>
           </div>
         </div>
