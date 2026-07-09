@@ -1,5 +1,5 @@
 // src/components/CapAcademy.jsx
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import './CapAcademy.css'
 
 const CapAcademy = ({ navigateTo }) => {
@@ -37,20 +37,153 @@ const CapAcademy = ({ navigateTo }) => {
     { number: '50% YoY', label: 'investor growth in Tier 2/3 cities' }
   ]
 
-  const successStories = [
-    { 
-      name: 'Suhara T', 
-      location: 'Kerala', 
+  // All testimonials including new ones
+  const allTestimonials = [
+    {
+      name: 'Suhara T',
+      location: 'Kerala',
       quote: '"This program gave me financial freedom and purpose."',
       role: 'Certified CAP Advisor'
     },
-    { 
-      name: 'Mary Jemshy', 
-      location: 'Kerala', 
+    {
+      name: 'Mary Jemshy',
+      location: 'Kerala',
       quote: '"Cap Academy helped me gain confidence and income at the same time."',
+      role: 'Certified CAP Advisor'
+    },
+    {
+      name: 'Ravi K',
+      location: 'Karnataka',
+      quote: '"This program gave me a clear understanding of how startup investing works and how to speak to people with confidence."',
+      role: 'Certified CAP Advisor'
+    },
+    {
+      name: 'Anjali Nair',
+      location: 'Kerala',
+      quote: '"CAP Academy helped me learn step by step. The sessions were simple, practical, and useful for someone starting fresh."',
+      role: 'Certified CAP Advisor'
+    },
+    {
+      name: 'Karthik R',
+      location: 'Tamil Nadu',
+      quote: '"I was looking for a flexible opportunity, and this program helped me build knowledge, confidence, and direction."',
+      role: 'Certified CAP Advisor'
+    },
+    {
+      name: 'Neha Patil',
+      location: 'Maharashtra',
+      quote: '"The training made the startup ecosystem easier to understand. I now feel more confident guiding interested investors."',
+      role: 'Certified CAP Advisor'
+    },
+    {
+      name: 'Amit Sharma',
+      location: 'Delhi',
+      quote: '"CAP Academy gave me the right foundation to understand startups, investor discussions, and professional communication."',
+      role: 'Certified CAP Advisor'
+    },
+    {
+      name: 'Gurpreet Singh',
+      location: 'Punjab',
+      quote: '"The program was practical and easy to follow. It helped me understand how to identify serious investor interest."',
+      role: 'Certified CAP Advisor'
+    },
+    {
+      name: 'Pooja Verma',
+      location: 'Madhya Pradesh',
+      quote: '"I joined with very basic knowledge, but the training helped me understand the process clearly and confidently."',
+      role: 'Certified CAP Advisor'
+    },
+    {
+      name: 'Sandeep Reddy',
+      location: 'Telangana',
+      quote: '"CAP Academy helped me improve my communication and gave me a better understanding of startup investment opportunities."',
+      role: 'Certified CAP Advisor'
+    },
+    {
+      name: 'Vamsi Krishna',
+      location: 'Andhra Pradesh',
+      quote: '"The program gave me structure, clarity, and confidence to start my journey as a CAP Advisor."',
+      role: 'Certified CAP Advisor'
+    },
+    {
+      name: 'Meena Choudhary',
+      location: 'Rajasthan',
+      quote: '"The sessions were simple and practical. I liked how everything was explained with real examples and clear guidance."',
+      role: 'Certified CAP Advisor'
+    },
+    {
+      name: 'Dhruv Shah',
+      location: 'Gujarat',
+      quote: '"CAP Academy helped me understand how startups and investors connect. It opened up a new professional opportunity for me."',
+      role: 'Certified CAP Advisor'
+    },
+    {
+      name: 'Riya Banerjee',
+      location: 'West Bengal',
+      quote: '"The training was very useful for building confidence. It helped me speak better and understand investor expectations."',
+      role: 'Certified CAP Advisor'
+    },
+    {
+      name: 'Abhishek Mishra',
+      location: 'Uttar Pradesh',
+      quote: '"I found the program helpful because it explained complex topics in a very simple and practical way."',
+      role: 'Certified CAP Advisor'
+    },
+    {
+      name: 'Nitin Yadav',
+      location: 'Haryana',
+      quote: '"CAP Academy gave me the confidence to explore a new career path with proper training and support."',
+      role: 'Certified CAP Advisor'
+    },
+    {
+      name: 'Subhashree Das',
+      location: 'Odisha',
+      quote: '"The program helped me understand startups, investor basics, and how to approach conversations professionally."',
       role: 'Certified CAP Advisor'
     }
   ]
+
+  // Auto-scroll logic for testimonials with FASTER speed
+  const scrollContainerRef = useRef(null)
+
+  useEffect(() => {
+    const container = scrollContainerRef.current
+    if (!container) return
+
+    // Increased scroll amount for faster scrolling
+    const scrollAmount = 400 // Increased from 350
+    const scrollIntervalTime = 2500 // Reduced from 4000ms for faster speed
+
+    let scrollInterval = setInterval(() => {
+      // Check if we're near the end, then reset to beginning
+      if (container.scrollLeft + container.clientWidth >= container.scrollWidth - 50) {
+        container.scrollTo({ left: 0, behavior: 'smooth' })
+      } else {
+        container.scrollBy({ left: scrollAmount, behavior: 'smooth' })
+      }
+    }, scrollIntervalTime)
+
+    // Pause on hover
+    const pauseAutoScroll = () => clearInterval(scrollInterval)
+    const resumeAutoScroll = () => {
+      scrollInterval = setInterval(() => {
+        if (container.scrollLeft + container.clientWidth >= container.scrollWidth - 50) {
+          container.scrollTo({ left: 0, behavior: 'smooth' })
+        } else {
+          container.scrollBy({ left: scrollAmount, behavior: 'smooth' })
+        }
+      }, scrollIntervalTime)
+    }
+
+    container.addEventListener('mouseenter', pauseAutoScroll)
+    container.addEventListener('mouseleave', resumeAutoScroll)
+
+    return () => {
+      clearInterval(scrollInterval)
+      container.removeEventListener('mouseenter', pauseAutoScroll)
+      container.removeEventListener('mouseleave', resumeAutoScroll)
+    }
+  }, [])
 
   return (
     <>
@@ -225,7 +358,7 @@ const CapAcademy = ({ navigateTo }) => {
         </div>
       </section>
 
-      {/* Success Stories */}
+      {/* Success Stories - Auto-scrolling Testimonials with FASTER speed */}
       <section className="academy-stories">
         <div className="academy-section-header">
           <div className="section-label">Success Stories</div>
@@ -233,8 +366,11 @@ const CapAcademy = ({ navigateTo }) => {
           <p className="academy-section-sub">Top-performing CAP Advisors across India!</p>
         </div>
 
-        <div className="academy-stories-grid">
-          {successStories.map((story, index) => (
+        <div 
+          className="academy-stories-scroll" 
+          ref={scrollContainerRef}
+        >
+          {allTestimonials.map((story, index) => (
             <div key={index} className="academy-story-card">
               <div className="academy-story-quote">{story.quote}</div>
               <div className="academy-story-author">

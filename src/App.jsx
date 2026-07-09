@@ -26,8 +26,12 @@ import DisclaimerPage from './components/DisclaimerPage'
 import RegionPage from './components/RegionPage'
 import CapAcademy from './components/CapAcademy'
 
+// Import global components
+import WhatsAppButton from './components/WhatsAppButton'
+import ScrollToTop from './components/ScrollToTop'
+
 // Scroll to top on route change
-const ScrollToTop = () => {
+const ScrollToTopOnRouteChange = () => {
   const { pathname } = useLocation()
   
   useEffect(() => {
@@ -151,7 +155,12 @@ function AppContent() {
     <div className="app">
       <Navbar navigateTo={navigateTo} currentPage={location.pathname} />
       <main className="main-content">
+        <ScrollToTopOnRouteChange />
+        
+        {/* Global Components - Available on every page */}
+        <WhatsAppButton />
         <ScrollToTop />
+        
         <Routes>
           {/* Home Route */}
           <Route path="/" element={
@@ -162,6 +171,7 @@ function AppContent() {
               <HowItWorks />
               <QuoteSection />
               <Sectors />
+              
               <Regional navigateTo={navigateTo} />
               <Testimonials />
               <ContactSection navigateTo={navigateTo} />

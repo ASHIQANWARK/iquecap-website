@@ -22,7 +22,7 @@
 .footer-brand p {
   font-size: 0.83rem;
   line-height: 1.8;
-  color: var(--white-dim);
+  color: var(--white);
   margin-top: 14px;
   max-width: 270px;
 }
@@ -57,7 +57,7 @@
   justify-content: space-between;
   align-items: center;
   font-size: 0.72rem;
-  color: rgba(240, 250, 249, 0.2);
+  color: rgb(240, 250, 249);
 }
 
 .footer-bottom a {
