@@ -51,7 +51,7 @@ function AppContent() {
   // Initialize cursor
   useCursor(true)
 
-  // Navigation function
+  // Navigation function with region mapping
   const navigateTo = (page, index) => {
     console.log('Navigating to:', page)
     let path = '/'
@@ -94,40 +94,41 @@ function AppContent() {
         path = '/disclaimer'
         setShowBlogPost(false)
         break
+      // Region mappings - now using region1, region2, etc.
       case 'kerala':
-        path = '/kerala'
+        path = '/region1'
         setShowBlogPost(false)
         break
       case 'karnataka':
-        path = '/karnataka'
+        path = '/region2'
         setShowBlogPost(false)
         break
       case 'maharashtra':
-        path = '/maharashtra'
+        path = '/region3'
         setShowBlogPost(false)
         break
       case 'tamilnadu':
-        path = '/tamilnadu'
+        path = '/region4'
         setShowBlogPost(false)
         break
       case 'punjab':
-        path = '/punjab'
+        path = '/region5'
         setShowBlogPost(false)
         break
       case 'delhi':
-        path = '/delhi-ncr'
+        path = '/region6'
         setShowBlogPost(false)
         break
       case 'mp':
-        path = '/madhyapradesh'
+        path = '/region7'
         setShowBlogPost(false)
         break
       case 'ap':
-        path = '/andhrapradesh'
+        path = '/region8'
         setShowBlogPost(false)
         break
       case 'odisha':
-        path = '/odisha'
+        path = '/region9'
         setShowBlogPost(false)
         break
       default:
@@ -203,16 +204,16 @@ function AppContent() {
             )
           } />
           
-          {/* Region Routes */}
-          <Route path="/kerala" element={<RegionPage regionId="kerala" navigateTo={navigateTo} />} />
-          <Route path="/karnataka" element={<RegionPage regionId="karnataka" navigateTo={navigateTo} />} />
-          <Route path="/maharashtra" element={<RegionPage regionId="maharashtra" navigateTo={navigateTo} />} />
-          <Route path="/tamilnadu" element={<RegionPage regionId="tamilnadu" navigateTo={navigateTo} />} />
-          <Route path="/punjab" element={<RegionPage regionId="punjab" navigateTo={navigateTo} />} />
-          <Route path="/delhi-ncr" element={<RegionPage regionId="delhi" navigateTo={navigateTo} />} />
-          <Route path="/madhyapradesh" element={<RegionPage regionId="mp" navigateTo={navigateTo} />} />
-          <Route path="/andhrapradesh" element={<RegionPage regionId="ap" navigateTo={navigateTo} />} />
-          <Route path="/odisha" element={<RegionPage regionId="odisha" navigateTo={navigateTo} />} />
+          {/* Region Routes - Using region1, region2, etc. */}
+          <Route path="/region1" element={<RegionPage regionId="kerala" navigateTo={navigateTo} />} />
+          <Route path="/region2" element={<RegionPage regionId="karnataka" navigateTo={navigateTo} />} />
+          <Route path="/region3" element={<RegionPage regionId="maharashtra" navigateTo={navigateTo} />} />
+          <Route path="/region4" element={<RegionPage regionId="tamilnadu" navigateTo={navigateTo} />} />
+          <Route path="/region5" element={<RegionPage regionId="punjab" navigateTo={navigateTo} />} />
+          <Route path="/region6" element={<RegionPage regionId="delhi" navigateTo={navigateTo} />} />
+          <Route path="/region7" element={<RegionPage regionId="mp" navigateTo={navigateTo} />} />
+          <Route path="/region8" element={<RegionPage regionId="ap" navigateTo={navigateTo} />} />
+          <Route path="/region9" element={<RegionPage regionId="odisha" navigateTo={navigateTo} />} />
           
           {/* 404 - Catch all */}
           <Route path="*" element={
