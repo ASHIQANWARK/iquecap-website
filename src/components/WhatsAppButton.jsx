@@ -6,8 +6,8 @@ const WhatsAppButton = () => {
   const [isVisible, setIsVisible] = useState(true)
   const [lastScrollY, setLastScrollY] = useState(0)
 
-  const phoneNumber = '919999999999' // Replace with your actual WhatsApp number
-  const message = 'Hi! I want to know more about CAP Academy and investment opportunities.'
+  const phoneNumber = '9187710792' // Replace with your actual WhatsApp number
+  const message = 'Hi! I want to know more about iQueCAP and investment opportunities.'
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
 
   // Hide button when scrolling down, show when scrolling up
