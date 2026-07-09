@@ -1,3 +1,4 @@
+/* What We Do Section */
 .what-we-do {
   background: var(--deep);
   display: grid;
@@ -5,6 +6,13 @@
   gap: 80px;
   align-items: center;
   padding: 110px 60px;
+  min-height: 600px;
+}
+
+.what-we-do-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .what-we-do-text p {
@@ -15,7 +23,27 @@
   margin-bottom: 18px;
 }
 
+.what-we-do-text .btn-primary {
+  align-self: flex-start;
+  margin-top: 12px;
+}
+
 .what-we-do-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  min-height: 480px;
+  position: relative;
+}
+
+/* ORBIT Container */
+.orb-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  aspect-ratio: 1/1;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -24,17 +52,20 @@
 /* ORBIT */
 .orb {
   position: relative;
-  width: 300px;
-  height: 300px;
+  width: 100%;
+  height: 100%;
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .orb-ring-outer {
   position: absolute;
   border-radius: 50%;
   border: 1px solid rgba(0, 180, 148, 0.18);
-  width: 230px;
-  height: 230px;
+  width: 76%;
+  height: 76%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -44,8 +75,8 @@
   position: absolute;
   border-radius: 50%;
   border: 1px solid rgba(0, 180, 148, 0.08);
-  width: 155px;
-  height: 155px;
+  width: 52%;
+  height: 52%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -55,8 +86,8 @@
   position: absolute;
   border-radius: 50%;
   border: 1px solid rgba(0, 230, 118, 0.5);
-  width: 62px;
-  height: 62px;
+  width: 20%;
+  height: 20%;
   top: 50%;
   left: 50%;
   animation: orbP 2.4s ease-out infinite;
@@ -84,8 +115,8 @@
 
 .orb-center {
   position: absolute;
-  width: 62px;
-  height: 62px;
+  width: 20%;
+  height: 20%;
   border-radius: 50%;
   top: 50%;
   left: 50%;
@@ -103,16 +134,24 @@
 .orb-center span {
   font-family: 'Syne', sans-serif;
   font-weight: 800;
-  font-size: 9px;
+  font-size: clamp(7px, 1.4vw, 14px);
   color: white;
   letter-spacing: 1px;
   line-height: 1.4;
+  text-align: center;
+}
+
+.orb-center .orb-logo {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
+  border-radius: 50%;
 }
 
 .orb-node {
   position: absolute;
-  width: 44px;
-  height: 44px;
+  width: 14%;
+  height: 14%;
   border-radius: 50%;
   background: linear-gradient(135deg, #031818, #0D4040);
   border: 1px solid rgba(0, 180, 148, 0.4);
@@ -124,6 +163,8 @@
   transition: all 0.25s ease;
   z-index: 5;
   text-decoration: none;
+  min-width: 38px;
+  min-height: 38px;
 }
 
 .orb-node:hover,
@@ -131,6 +172,7 @@
   background: rgba(10, 70, 70, 0.98);
   border-color: #00E676;
   box-shadow: 0 0 16px rgba(0, 230, 118, 0.4);
+  transform: scale(1.1);
 }
 
 .orb-node:hover span,
@@ -141,7 +183,7 @@
 .orb-node span {
   font-family: 'Syne', sans-serif;
   font-weight: 700;
-  font-size: 6px;
+  font-size: clamp(5px, 0.8vw, 9px);
   color: rgba(240, 250, 249, 0.88);
   letter-spacing: 0.3px;
   line-height: 1.35;
@@ -153,202 +195,306 @@
   white-space: pre-wrap;
 }
 
-/* Node positions */
+/* Node positions - Using percentage-based positioning */
 .orb-n0 {
-  left: 128px;
-  top: 13px;
+  left: 42.5%;
+  top: 4%;
 }
 .orb-n1 {
-  left: 202px;
-  top: 40px;
+  left: 67.5%;
+  top: 13.5%;
 }
 .orb-n2 {
-  left: 241px;
-  top: 108px;
+  left: 80.5%;
+  top: 36%;
 }
 .orb-n3 {
-  left: 228px;
-  top: 186px;
+  left: 76%;
+  top: 62%;
 }
 .orb-n4 {
-  left: 167px;
-  top: 236px;
+  left: 55.5%;
+  top: 78.5%;
 }
 .orb-n5 {
-  left: 89px;
-  top: 236px;
+  left: 29.5%;
+  top: 78.5%;
 }
 .orb-n6 {
-  left: 28px;
-  top: 186px;
+  left: 9.5%;
+  top: 62%;
 }
 .orb-n7 {
-  left: 15px;
-  top: 108px;
+  left: 5%;
+  top: 36%;
 }
 .orb-n8 {
-  left: 54px;
-  top: 40px;
+  left: 18%;
+  top: 13.5%;
 }
 
-/* DESKTOP - scale orbit up to 480px */
-@media (min-width: 901px) {
-  .orb {
-    width: 480px;
-    height: 480px;
+/* DESKTOP - Large screens */
+@media (min-width: 1200px) {
+  .what-we-do {
+    padding: 120px 80px;
+    gap: 100px;
   }
 
-  .orb-ring-outer {
-    width: 368px;
-    height: 368px;
-  }
-
-  .orb-ring-inner {
-    width: 248px;
-    height: 248px;
-  }
-
-  .orb-p {
-    width: 99px;
-    height: 99px;
-  }
-
-  .orb-center {
-    width: 99px;
-    height: 99px;
-  }
-
-  .orb-center span {
-    font-size: 14px;
+  .orb-wrapper {
+    max-width: 520px;
   }
 
   .orb-node {
-    width: 70px;
-    height: 70px;
+    width: 14%;
+    height: 14%;
+    min-width: 60px;
+    min-height: 60px;
   }
 
   .orb-node span {
-    font-size: 9px;
-  }
-
-  .orb-n0 {
-    left: 205px;
-    top: 21px;
-  }
-  .orb-n1 {
-    left: 323px;
-    top: 64px;
-  }
-  .orb-n2 {
-    left: 386px;
-    top: 173px;
-  }
-  .orb-n3 {
-    left: 365px;
-    top: 298px;
-  }
-  .orb-n4 {
-    left: 267px;
-    top: 378px;
-  }
-  .orb-n5 {
-    left: 142px;
-    top: 378px;
-  }
-  .orb-n6 {
-    left: 45px;
-    top: 298px;
-  }
-  .orb-n7 {
-    left: 24px;
-    top: 173px;
-  }
-  .orb-n8 {
-    left: 86px;
-    top: 64px;
-  }
-}
-
-@media (max-width: 900px) {
-  .what-we-do {
-    grid-template-columns: 1fr;
-    gap: 40px;
-    padding: 70px 22px;
-  }
-
-  .orb {
-    width: 260px;
-    height: 260px;
-  }
-
-  .orb-ring-outer {
-    width: 200px;
-    height: 200px;
-  }
-
-  .orb-ring-inner {
-    width: 135px;
-    height: 135px;
-  }
-
-  .orb-p {
-    width: 54px;
-    height: 54px;
+    font-size: 10px;
   }
 
   .orb-center {
-    width: 54px;
-    height: 54px;
+    width: 20%;
+    height: 20%;
+  }
+
+  .orb-center span {
+    font-size: 16px;
+  }
+
+  .orb-p {
+    width: 20%;
+    height: 20%;
+  }
+}
+
+/* DESKTOP - Medium */
+@media (min-width: 901px) and (max-width: 1199px) {
+  .what-we-do {
+    padding: 100px 50px;
+    gap: 60px;
+  }
+
+  .orb-wrapper {
+    max-width: 420px;
+  }
+
+  .orb-node {
+    width: 14%;
+    height: 14%;
+    min-width: 50px;
+    min-height: 50px;
+  }
+
+  .orb-node span {
+    font-size: 8px;
+  }
+
+  .orb-center {
+    width: 20%;
+    height: 20%;
+  }
+
+  .orb-center span {
+    font-size: 12px;
+  }
+
+  .orb-p {
+    width: 20%;
+    height: 20%;
+  }
+}
+
+/* TABLET */
+@media (max-width: 900px) {
+  .what-we-do {
+    grid-template-columns: 1fr;
+    gap: 50px;
+    padding: 70px 22px;
+    min-height: auto;
+  }
+
+  .what-we-do-text {
+    order: 1;
+  }
+
+  .what-we-do-text .btn-primary {
+    align-self: center;
+  }
+
+  .what-we-do-visual {
+    order: 0;
+    min-height: 320px;
+    padding: 20px 0;
+  }
+
+  .orb-wrapper {
+    max-width: 320px;
+  }
+
+  .orb-node {
+    width: 15%;
+    height: 15%;
+    min-width: 42px;
+    min-height: 42px;
+  }
+
+  .orb-node span {
+    font-size: 7px;
+  }
+
+  .orb-center {
+    width: 20%;
+    height: 20%;
+    min-width: 50px;
+    min-height: 50px;
+  }
+
+  .orb-center span {
+    font-size: 10px;
+  }
+
+  .orb-p {
+    width: 20%;
+    height: 20%;
+  }
+
+  .orb-ring-outer {
+    width: 76%;
+    height: 76%;
+  }
+
+  .orb-ring-inner {
+    width: 52%;
+    height: 52%;
+  }
+}
+
+/* MOBILE - Large */
+@media (max-width: 600px) {
+  .what-we-do {
+    padding: 50px 16px;
+    gap: 30px;
+  }
+
+  .what-we-do-text p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  .what-we-do-visual {
+    min-height: 280px;
+    padding: 10px 0;
+  }
+
+  .orb-wrapper {
+    max-width: 260px;
+  }
+
+  .orb-node {
+    width: 16%;
+    height: 16%;
+    min-width: 36px;
+    min-height: 36px;
+  }
+
+  .orb-node span {
+    font-size: 6px;
+    letter-spacing: 0.2px;
+  }
+
+  .orb-center {
+    width: 22%;
+    height: 22%;
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .orb-center span {
+    font-size: 8px;
+  }
+
+  .orb-p {
+    width: 22%;
+    height: 22%;
+  }
+
+  .orb-ring-outer {
+    width: 78%;
+    height: 78%;
+  }
+
+  .orb-ring-inner {
+    width: 54%;
+    height: 54%;
+  }
+}
+
+/* MOBILE - Small */
+@media (max-width: 400px) {
+  .what-we-do {
+    padding: 40px 12px;
+    gap: 24px;
+  }
+
+  .what-we-do-visual {
+    min-height: 240px;
+  }
+
+  .orb-wrapper {
+    max-width: 220px;
+  }
+
+  .orb-node {
+    width: 18%;
+    height: 18%;
+    min-width: 32px;
+    min-height: 32px;
+  }
+
+  .orb-node span {
+    font-size: 5px;
+    letter-spacing: 0.1px;
+  }
+
+  .orb-center {
+    width: 24%;
+    height: 24%;
+    min-width: 38px;
+    min-height: 38px;
   }
 
   .orb-center span {
     font-size: 7px;
   }
 
-  .orb-node {
-    width: 38px;
-    height: 38px;
+  .orb-p {
+    width: 24%;
+    height: 24%;
+  }
+}
+
+/* Fix for very tall screens */
+@media (min-height: 900px) and (min-width: 901px) {
+  .what-we-do {
+    min-height: 700px;
   }
 
-  .orb-node span {
-    font-size: 5px;
+  .orb-wrapper {
+    max-width: 480px;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .orb-p {
+    animation: none !important;
+    opacity: 0.3;
   }
 
-  /* Mobile node positions (scaled) */
-  .orb-n0 {
-    left: 111px;
-    top: 11px;
-  }
-  .orb-n1 {
-    left: 175px;
-    top: 35px;
-  }
-  .orb-n2 {
-    left: 209px;
-    top: 94px;
-  }
-  .orb-n3 {
-    left: 198px;
-    top: 161px;
-  }
-  .orb-n4 {
-    left: 145px;
-    top: 205px;
-  }
-  .orb-n5 {
-    left: 77px;
-    top: 205px;
-  }
-  .orb-n6 {
-    left: 24px;
-    top: 161px;
-  }
-  .orb-n7 {
-    left: 13px;
-    top: 94px;
-  }
-  .orb-n8 {
-    left: 47px;
-    top: 35px;
+  .orb-node:hover {
+    transform: none !important;
   }
 }

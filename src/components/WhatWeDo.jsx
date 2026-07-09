@@ -1,5 +1,6 @@
 import React from 'react'
 import './WhatWeDo.css'
+import logoIcon from '../assets/iQue1.png'
 
 const WhatWeDo = ({ navigateTo }) => {
   const nodes = [
@@ -31,7 +32,9 @@ const WhatWeDo = ({ navigateTo }) => {
           <div className="orb-p"></div>
           <div className="orb-p"></div>
           <div className="orb-p"></div>
-          <div className="orb-center"><span>iQue</span><span>CAP</span></div>
+          <div className="orb-center">
+  <img src={logoIcon} alt="iQue CAP Logo" className="orb-logo" />
+</div>
           {nodes.map((node, idx) => (
             <div
               key={idx}
