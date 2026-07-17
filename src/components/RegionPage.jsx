@@ -205,7 +205,7 @@ const RegionPage = ({ regionId, navigateTo }) => {
           <p className="region-tagline-big">"{data.tagline}"</p>
           <p className="region-hero-sub">{data.sub}</p>
           <div className="region-hero-actions">
-            <a href={`tel:+${contact.phone}`} className="region-phone-btn">📞 Call Now</a>
+            <a href={`tel:${contact.phone}`} className="region-phone-btn">📞 Call Now</a>
             <button className="region-ghost-btn" onClick={() => document.getElementById('region-form').scrollIntoView({ behavior: 'smooth' })}>
               Get In Touch →
             </button>
