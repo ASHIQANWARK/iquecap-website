@@ -155,13 +155,13 @@ export const R = {
 }
 
 export const REGIONAL_CONTACTS = {
-  kerala: { phone: '0862987217' },
-  karnataka: { phone: '0862987217' },
-  maharashtra: { phone: '0862987217' },
-  tamilnadu: { phone: '0862987217' },
-  punjab: { phone: '0862987217' },
-  delhi: { phone: '0862987217' },
-  mp: { phone: '0862987217' },
-  ap: { phone: '0862987217' },
-  odisha: { phone: '0862987217' }
+  kerala: { phone: '08062987217' },
+  karnataka: { phone: '08062987217' },
+  maharashtra: { phone: '08062987217' },
+  tamilnadu: { phone: '08062987217' },
+  punjab: { phone: '08062987217' },
+  delhi: { phone: '08062987217' },
+  mp: { phone: '08062987217' },
+  ap: { phone: '08062987217' },
+  odisha: { phone: '08062987217' }
 }
